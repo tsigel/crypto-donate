@@ -5,8 +5,8 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@waves.exchange/provider-web": "0.0.3",
-    "@waves/signer": "0.0.4"
+    "@waves.exchange/provider-web": "^1.0.2",
+    "@waves/signer": "^1.0.2"
   },
   "devDependencies": {
     "ts-loader": "^6.2.1",

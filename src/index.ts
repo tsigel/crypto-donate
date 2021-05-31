@@ -1,19 +1,20 @@
-import Waves, {TLong} from "@waves/signer";
-import Provider from "@waves.exchange/provider-web";
+import { Signer } from '@waves/signer';
+import { ProviderWeb } from '@waves.exchange/provider-web';
 
+type Long = string | number
 
-const provider = new Provider();
-export const waves = new Waves();
+const provider = new ProviderWeb();
+export const waves = new Signer();
 
 waves.setProvider(provider);
 
-export function donate(element: HTMLElement, amount: TLong) {
-    const label = document.querySelector(".waves__donate-label")!;
+export function donate(element: HTMLElement, amount: Long) {
+    const label = document.querySelector('.waves__donate-label')!;
     waves
         .transfer({
-            recipient: element.getAttribute("data-recipient")!,
+            recipient: element.getAttribute('data-recipient')!,
             amount: amount,
-            assetId: "WAVES"
+            assetId: 'WAVES'
         })
         .broadcast()
         .then(
